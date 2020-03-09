@@ -16,7 +16,7 @@ public class Main {
                 .mapToObj(i -> new Resident("R" + (3 - i)))
                 .collect(Collectors.toList());
         System.out.println("Pre-sorting: " + residents);
-        residents.sort(Comparator.comparing(Resident::toString));
+        residents.sort(Comparator.comparing(Resident::getName));
         System.out.println("Post-sorting: " + residents);
 
         Set<Hospital> hospitals = new TreeSet<>();
