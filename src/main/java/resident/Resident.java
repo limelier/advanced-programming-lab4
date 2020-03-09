@@ -18,6 +18,10 @@ public class Resident {
         this.preference = Arrays.asList(preference);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return name;
