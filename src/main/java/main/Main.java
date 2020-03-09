@@ -3,18 +3,17 @@ package main;
 import hospital.Hospital;
 import resident.Resident;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Main {
     public static void main(String[] args) {
-        List<Resident> residents = IntStream.rangeClosed(0, 3)
-                .mapToObj(i -> new Resident("R" + (3 - i)))
-                .collect(Collectors.toList());
+        Resident r0 = new Resident("R0");
+        Resident r1 = new Resident("R1");
+        Resident r2 = new Resident("R2");
+        Resident r3 = new Resident("R3");
+        List<Resident> residents = new ArrayList<>(Arrays.asList(r0, r1, r2, r3));
         System.out.println("Pre-sorting: " + residents);
         residents.sort(Comparator.comparing(Resident::getName));
         System.out.println("Post-sorting: " + residents);
