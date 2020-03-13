@@ -1,18 +1,7 @@
-package resident;
+package element;
 
-public class Resident {
-    String name;
-
+public class Resident extends Element {
     public Resident(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String toString() {
-        return name;
+        super(name);
     }
 }

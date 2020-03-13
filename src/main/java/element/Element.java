@@ -1,7 +1,7 @@
 package element;
 
 public abstract class Element {
-    private String name;
+    String name;
 
     public Element(String name) {
         this.name = name;
