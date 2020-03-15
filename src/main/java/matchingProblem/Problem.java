@@ -1,24 +1,24 @@
 package matchingProblem;
 
 public class Problem {
-    Partition partition1;
-    Partition partition2;
+    Partition suitors;
+    Partition acceptors;
 
-    public Problem(Partition partition1, Partition partition2) {
-        this.partition1 = partition1;
-        this.partition2 = partition2;
+    public Problem(Partition suitors, Partition acceptors) {
+        this.suitors = suitors;
+        this.acceptors = acceptors;
     }
 
-    public Partition getPartition1() {
-        return partition1;
+    public Partition getSuitors() {
+        return suitors;
     }
 
-    public Partition getPartition2() {
-        return partition2;
+    public Partition getAcceptors() {
+        return acceptors;
     }
 
     @Override
     public String toString() {
-        return "{" + partition1 + " / " + partition2 + "}";
+        return "{" + suitors + " / " + acceptors + "}";
     }
 }
