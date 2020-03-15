@@ -21,6 +21,14 @@ public class GaleShapleySolver extends Solver {
         }
     }
 
+
+    /**
+     * Solve the problem using the Gale-Shapley algorithm.
+     *
+     * The algorithm keeps going as long as there are unmatched suitors with acceptors left to propose to. Once such a suitor is chosen, he will ask his preferred remaining acceptor to match with it. If that acceptor likes this suitor more than the one it is matched to, it will replace its suitor with this one, leaving the other unmatched.
+     *
+     * @return a stable matching
+     */
     @Override
     public Matching solve() {
         Matching matching = new Matching();
