@@ -17,7 +17,8 @@ public class Matching {
 
     /**
      * Create a two-directional match between a suitor and an acceptor.
-     * @param suitor suitor to match
+     *
+     * @param suitor   suitor to match
      * @param acceptor acceptor to match
      */
     public void match(Element suitor, Element acceptor) {
@@ -27,7 +28,8 @@ public class Matching {
 
     /**
      * Remove a two-dimensional match between a suitor and an acceptor.
-     * @param suitor suitor to unmatch
+     *
+     * @param suitor   suitor to unmatch
      * @param acceptor acceptor to unmatch
      */
     public void unmatch(Element suitor, Element acceptor) {
@@ -41,6 +43,20 @@ public class Matching {
 
     public Element getAcceptorMatch(Element acceptor) {
         return acceptorMatches.get(acceptor);
+    }
+
+    public boolean isStable() {
+        for (Element suitor : suitorMatches.keySet()) {
+            for (Element acceptor : acceptorMatches.keySet()) {
+                if (
+                        suitor.prefersMore(acceptor, suitorMatches.get(suitor))
+                                && acceptor.prefersMore(suitor, acceptorMatches.get(acceptor))
+                ) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     /**
