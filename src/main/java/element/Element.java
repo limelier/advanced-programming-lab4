@@ -2,6 +2,7 @@ package element;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class Element {
@@ -15,6 +16,10 @@ public abstract class Element {
 
     public String getName() {
         return name;
+    }
+
+    public List<Element> getPreferences() {
+        return Collections.unmodifiableList(preferences);
     }
 
     /**
