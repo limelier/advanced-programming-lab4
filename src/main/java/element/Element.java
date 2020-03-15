@@ -36,8 +36,12 @@ public class Element {
         this.preferences = Arrays.asList(preferences);
     }
 
-    public boolean prefersMore(Element suitor, Element opponent) {
-        return (preferences.indexOf(suitor) < preferences.indexOf(opponent));
+    public void setPreferences(List<Element> preferences) {
+        this.preferences = new ArrayList<>(preferences);
+    }
+
+    public boolean prefersMore(Element subject, Element other) {
+        return (preferences.indexOf(subject) < preferences.indexOf(other));
     }
 
     @Override
