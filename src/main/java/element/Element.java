@@ -36,6 +36,10 @@ public abstract class Element {
         this.preferences = Arrays.asList(preferences);
     }
 
+    public boolean prefersMore(Element suitor, Element opponent) {
+        return (preferences.indexOf(suitor) < preferences.indexOf(opponent));
+    }
+
     @Override
     public String toString() {
         return name;
