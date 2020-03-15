@@ -7,14 +7,32 @@ import java.util.Map;
 import java.util.StringJoiner;
 
 public class Matching {
-    Map<Element, Element> matches;
+    Map<Element, Element> matchesFromTo;
+    Map<Element, Element> matchesToFrom;
 
     public Matching() {
-        this.matches = new HashMap<>();
+        this.matchesFromTo = new HashMap<>();
+        this.matchesToFrom = new HashMap<>();
     }
 
+    /**
+     * Create a two-directional match between the two elements.
+     * @param from element to match from
+     * @param to element to match to
+     */
     public void match(Element from, Element to) {
-        matches.put(from, to);
+        matchesFromTo.put(from, to);
+        matchesToFrom.put(to, from);
+    }
+
+    /**
+     * Remove a two-dimensional match between two elements.
+     * @param from element the match starts from
+     * @param to element the match ends at
+     */
+    public void unmatch(Element from, Element to) {
+        matchesFromTo.remove(from);
+        matchesToFrom.remove(to);
     }
 
     /**
@@ -25,8 +43,8 @@ public class Matching {
     @Override
     public String toString() {
         StringJoiner stringJoiner = new StringJoiner(", ", "{", "}");
-        for (Element key : matches.keySet()) {
-            stringJoiner.add("(" + key + ", " + matches.get(key) + ")");
+        for (Element key : matchesFromTo.keySet()) {
+            stringJoiner.add("(" + key + ", " + matchesFromTo.get(key) + ")");
         }
         return stringJoiner.toString();
     }
