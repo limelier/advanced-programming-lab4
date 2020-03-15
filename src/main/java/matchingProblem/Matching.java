@@ -35,6 +35,14 @@ public class Matching {
         acceptorMatches.remove(acceptor);
     }
 
+    public Element getSuitorMatch(Element suitor) {
+        return suitorMatches.get(suitor);
+    }
+
+    public Element getAcceptorMatch(Element acceptor) {
+        return acceptorMatches.get(acceptor);
+    }
+
     /**
      * Renders the matching as a comma-separated list of matches.
      *
