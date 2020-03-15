@@ -4,6 +4,7 @@ import element.Element;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.StringJoiner;
 
 public class Partition implements Iterable<Element> {
     List<Element> elements;
@@ -14,7 +15,11 @@ public class Partition implements Iterable<Element> {
 
     @Override
     public String toString() {
-        return elements.toString();
+        StringJoiner joiner = new StringJoiner(", ", "[", "]");
+        for (Element element : elements) {
+            joiner.add(element + " - " + element.getPreferences());
+        }
+        return joiner.toString();
     }
 
     @Override
