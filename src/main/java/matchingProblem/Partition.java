@@ -9,4 +9,10 @@ public class Partition {
 
     public Partition(List<Element> elements) {
         this.elements = elements;
-    }}
+    }
+
+    @Override
+    public String toString() {
+        return elements.toString();
+    }
+}
