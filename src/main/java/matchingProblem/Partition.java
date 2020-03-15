@@ -1,4 +1,4 @@
-package matching;
+package matchingProblem;
 
 import element.Element;
 
@@ -9,5 +9,4 @@ public class Partition {
 
     public Partition(List<Element> elements) {
         this.elements = elements;
-    }
-}
+    }}
