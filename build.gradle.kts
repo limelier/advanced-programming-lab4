@@ -11,6 +11,7 @@ repositories {
 
 dependencies {
     testCompile("junit", "junit", "4.12")
+    implementation("com.github.javafaker:javafaker:1.0.2")
 }
 
 configure<JavaPluginConvention> {
