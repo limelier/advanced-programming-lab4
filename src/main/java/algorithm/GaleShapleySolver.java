@@ -38,7 +38,10 @@ public class GaleShapleySolver extends Solver {
             Element opponent = matching.getAcceptorMatch(acceptor);
 
             if (opponent == null || acceptor.prefersMore(suitor, opponent)) {
-                matching.unmatch(opponent, acceptor);
+                if (opponent != null) {
+                    matching.unmatch(opponent, acceptor);
+                    unmatchedSuitors.add(opponent);
+                }
                 matching.match(suitor, acceptor);
                 unmatchedSuitors.remove(suitor);
             }
