@@ -16,6 +16,14 @@ public class Generator {
         this.faker = new Faker();
     }
 
+    /**
+     * Generate a matching problem with the given number of elements in both partitions.
+     * <p>
+     * The generator uses a fake name generator to make the first partition a list of first names, and the second, a list of last names. The preferences of each item are a shuffled list of the other items.
+     *
+     * @param n the number of suitors and acceptors
+     * @return the generated problem
+     */
     public Problem generate(int n) {
         List<Element> suitors = IntStream.range(0, n)
                 .mapToObj(i -> new Element(faker.name().firstName()))

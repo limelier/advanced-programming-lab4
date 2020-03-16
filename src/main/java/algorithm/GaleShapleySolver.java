@@ -11,6 +11,12 @@ public class GaleShapleySolver extends Solver {
     Map<Element, List<Element>> suitorPreferences;
     Set<Element> unmatchedSuitors;
 
+
+    /**
+     * Instantiate the Gale Shapley solver on the given problem.
+     *
+     * @param problem the problem to instantiate on
+     */
     public GaleShapleySolver(Problem problem) {
         super(problem);
         suitorPreferences = new HashMap<>();
