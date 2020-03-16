@@ -2,15 +2,9 @@ package main;
 
 import algorithm.GaleShapleySolver;
 import algorithm.Solver;
-import element.Element;
-import element.Hospital;
-import element.Resident;
 import matchingProblem.Generator;
 import matchingProblem.Matching;
-import matchingProblem.Partition;
 import matchingProblem.Problem;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
